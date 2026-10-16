@@ -7,7 +7,7 @@ def test_homepage_assertions(page: Page):
     expect(page.get_by_text("Welcome to the-internet")).to_be_visible()
 
     # Heading com texto exato
-    expect(page.get_by_role("heading")).to_contain_text("Welcome")
+    expect(page.get_by_role("heading", name="Welcome to the-internet")).to_contain_text("Welcome")
 
 def test_login_assertions(page: Page):
     page.goto("https://the-internet.herokuapp.com/login")
